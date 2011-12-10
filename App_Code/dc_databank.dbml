@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database" Class="dc_databankDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\Database.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.tblBijlage" Member="tblBijlages">
+    <Type Name="tblBijlage">
+      <Column Name="pk_bijlageID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="bijlageURL" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="bijlageTitel" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="bijlageType" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fk_externvakID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblExternVak_tblBijlage" Member="tblExternVak" ThisKey="fk_externvakID" OtherKey="pk_externvakID" Type="tblExternVak" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblVak" Member="tblVaks">
+    <Type Name="tblVak">
+      <Column Name="pk_vakID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="vakNaam" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="vakStudiepunten" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblVak_tblDocentVak" Member="tblDocentVaks" ThisKey="pk_vakID" OtherKey="fk_vakID" Type="tblDocentVak" />
+      <Association Name="tblVak_tblEvk" Member="tblEvks" ThisKey="pk_vakID" OtherKey="fk_vakID" Type="tblEvk" />
+      <Association Name="tblVak_tblOpleidingVak" Member="tblOpleidingVaks" ThisKey="pk_vakID" OtherKey="fk_vakID" Type="tblOpleidingVak" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocent" Member="tblDocents">
+    <Type Name="tblDocent">
+      <Column Name="pk_docentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="docentNaam" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="docentWachtwoord" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="docentAdmin" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="tblDocent_tblDocentVak" Member="tblDocentVaks" ThisKey="pk_docentID" OtherKey="fk_docentID" Type="tblDocentVak" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblDocentVak" Member="tblDocentVaks">
+    <Type Name="tblDocentVak">
+      <Column Name="pk_docentvakID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_vakID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_docentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblDocent_tblDocentVak" Member="tblDocent" ThisKey="fk_docentID" OtherKey="pk_docentID" Type="tblDocent" IsForeignKey="true" />
+      <Association Name="tblVak_tblDocentVak" Member="tblVak" ThisKey="fk_vakID" OtherKey="pk_vakID" Type="tblVak" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblEvk" Member="tblEvks">
+    <Type Name="tblEvk">
+      <Column Name="pk_evkID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_studentID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_vakID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_externvakID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="evkDocentGoedgekeurd" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="evkAdminGoedgekeurd" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="tblVak_tblEvk" Member="tblVak" ThisKey="fk_vakID" OtherKey="pk_vakID" Type="tblVak" IsForeignKey="true" />
+      <Association Name="tblExternVak_tblEvk" Member="tblExternVak" ThisKey="fk_externvakID" OtherKey="pk_externvakID" Type="tblExternVak" IsForeignKey="true" />
+      <Association Name="tblStudent_tblEvk" Member="tblStudent" ThisKey="fk_studentID" OtherKey="pk_studentID" Type="tblStudent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblExternVak" Member="tblExternVaks">
+    <Type Name="tblExternVak">
+      <Column Name="pk_externvakID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="externvakNaam" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="externvakStudiepunt" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="externvakJaar" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="externvakOpleiding" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="externvakSchool" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="tblExternVak_tblBijlage" Member="tblBijlages" ThisKey="pk_externvakID" OtherKey="fk_externvakID" Type="tblBijlage" />
+      <Association Name="tblExternVak_tblEvk" Member="tblEvks" ThisKey="pk_externvakID" OtherKey="fk_externvakID" Type="tblEvk" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOpleiding" Member="tblOpleidings">
+    <Type Name="tblOpleiding">
+      <Column Name="pk_opleidingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="opleidingNaam" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="tblOpleiding_tblOpleidingVak" Member="tblOpleidingVaks" ThisKey="pk_opleidingID" OtherKey="fk_opleidingID" Type="tblOpleidingVak" />
+      <Association Name="tblOpleiding_tblStudent" Member="tblStudents" ThisKey="pk_opleidingID" OtherKey="fk_opleidingID" Type="tblStudent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblOpleidingVak" Member="tblOpleidingVaks">
+    <Type Name="tblOpleidingVak">
+      <Column Name="pk_opleidingvakID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fk_opleidingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fk_vakID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblOpleiding_tblOpleidingVak" Member="tblOpleiding" ThisKey="fk_opleidingID" OtherKey="pk_opleidingID" Type="tblOpleiding" IsForeignKey="true" />
+      <Association Name="tblVak_tblOpleidingVak" Member="tblVak" ThisKey="fk_vakID" OtherKey="pk_vakID" Type="tblVak" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblStudent" Member="tblStudents">
+    <Type Name="tblStudent">
+      <Column Name="pk_studentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="studentNaam" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="studentVoornaam" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="studentPasswoord" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="studentNummer" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fk_opleidingID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="tblStudent_tblEvk" Member="tblEvks" ThisKey="pk_studentID" OtherKey="fk_studentID" Type="tblEvk" />
+      <Association Name="tblOpleiding_tblStudent" Member="tblOpleiding" ThisKey="fk_opleidingID" OtherKey="pk_opleidingID" Type="tblOpleiding" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

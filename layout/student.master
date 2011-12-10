@@ -1,0 +1,92 @@
+﻿<%@ Master Language="VB" CodeFile="student.master.vb" Inherits="layout_student" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+     <title>
+        <asp:ContentPlaceHolder ID="page_title" runat="server">
+        </asp:ContentPlaceHolder> 
+    </title>
+    
+    <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+         <div class="header">
+                <div class="logout">
+                    <a href="#">Logout</a></div>
+                <div class="clear"></div>
+
+                <div id="logo"></div>
+                <div class="clear"></div>
+
+                    <p class="contact">Lukt er iets niet? 
+                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="mailto:else.vanorle@lessius.eu">Contacteer mevr. Van Orlé.</asp:HyperLink>
+    </p>
+        </div>
+
+
+
+            
+        <div class="line"></div>
+        <div class="clear"></div>
+
+   <div class="steps">
+    <div class="step">
+                 <ul>
+                     <li>STAP 1:</li>
+                     <li>gegevens invullen</li>
+                     <li>procedure goedkeuren</li>
+                 </ul>
+             </div>
+             <div class="step">
+                 <ul>
+                     <li>STAP 2:</li>
+                     <li>studieverloop</li>
+                     <li>selectie opleidingsonderdelen</li>
+                     <li>bijlage</li>
+                 </ul>
+             </div>
+             <div class="step">
+                 <ul>
+                    <li>STAP 3:</li>
+                    <li>overzicht vrijstellingen</li>
+                    <li>ondertekenen</li>
+                </ul>
+             </div>
+
+             <div class="clear"></div>
+    </div>
+
+
+        <div class="clear"></div>
+
+
+        <div class="wrapper">
+            <p class="title">
+                <asp:ContentPlaceHolder ID="content_title" runat="server">
+                </asp:ContentPlaceHolder>
+            </p>
+            <div class="clear"></div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>  
+            </div> 
+         </div>
+
+
+        <div class="clear"></div>
+        <div class="line"></div>
+        <div class="footer">
+            <p>created by: Nathalie De Hertogh, Sara Devuyst, Tanja Esselens en Toon Van Doorn</p>
+        </div>
+
+
+    </form>
+</body>
+</html>
+

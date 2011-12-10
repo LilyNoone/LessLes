@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="site.master.cs" Inherits="layout_site" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   
+    <title>
+        <asp:ContentPlaceHolder ID="page_title" runat="server">
+        </asp:ContentPlaceHolder> 
+    </title>
+
+    <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/reset.css" rel="stylesheet" type="text/css" />
+    <link href="../css/screen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+         <div class="header">
+                <div class="logout">
+                    <a href="#">Logout</a></div>
+                <div class="clear"></div>
+
+                <div id="logo"></div>
+                <div class="clear"></div>
+        </div>
+
+            
+        <div class="line"></div>
+        <div class="clear"></div>
+
+
+             <div class="clear"></div>
+
+
+
+        <div class="clear"></div>
+
+
+        <div class="wrapper">
+            <p class="title">
+                <asp:ContentPlaceHolder ID="content_title" runat="server">
+                </asp:ContentPlaceHolder>
+            </p>
+            <div class="clear"></div>
+            <div class="content">
+                <asp:ContentPlaceHolder ID="content" runat="server">
+                </asp:ContentPlaceHolder>  
+            </div> 
+         </div>
+
+
+        <div class="clear"></div>
+        <div class="line"></div>
+        <div class="footer">
+            <p>created by: Nathalie De Hertogh, Sara Devuyst, Tanja Esselens en Toon Van Doorn</p>
+        </div>
+
+
+    </form>
+</body>
+</html>
+
+
+
+
