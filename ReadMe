@@ -1,0 +1,29 @@
+Wat er gebeurt is:
+==================
+
+- Alles staat in een nieuwe website!
+	Ik heb bijna alles hertypt (omdat er met het kopieren fouten
+	in zouden kunnen kruipen), maar jullie code is niet veranderd! 
+	wel zullen er hier en daar wat namen anders geformuleerd zijn 
+	zodat we consistenter zijn.
+
+- 2 basis layouts
+	(site: voor admin en docent)
+	(student: voor -guess what- studenten)
+
+	Over de ContentPlaceHolders:
+		"page_title" staat voor de naam van de pagina in de browser
+			(ge weet wel, zo vanboven in dienen balk)
+		"content_title" staat voor het onderwerp van de pagina
+
+- database van toon ge-include.
+
+
+
+Opmerkingen:
+============
+
+- bij admin: ikzelf kan de repeaters niet zien op deze en de oorspronkelijke versie, ik weet niet echt of dit de bedoeling is of gewoon aan mij ligt =]
+
+- bij student/register: heb ik de onclick's ff moeten wegdoen, want ik vond de functies niet. Mochten die ergens staan dat ik er heb overgekeken, dan srr, laat dan weten of pas zelf ff aan.
+
