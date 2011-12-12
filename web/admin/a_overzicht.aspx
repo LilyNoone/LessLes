@@ -1,8 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/site.master" %>
-
-<script runat="server">
-
-</script>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/site.master" AutoEventWireup="true" CodeFile="a_overzicht.aspx.cs" Inherits="web_admin_a_overzicht" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="page_title" Runat="Server">
 Admin
@@ -91,4 +87,6 @@ Overzicht
 
 
 </asp:Content>
+
+
 

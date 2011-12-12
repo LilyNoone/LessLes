@@ -1,8 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/student.master" %>
-
-<script runat="server">
-
-</script>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/student.master" AutoEventWireup="true" CodeFile="s_register.aspx.cs" Inherits="web_student_s_register" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="page_title" Runat="Server">
     Student - gegevens invullen
@@ -74,7 +70,8 @@ Jouw gegevens:
     </table>
 
     <div class="buttons">
-        <asp:Button ID="btn_register" class="BtnNext" runat="server" Text="volgende" />
+        <asp:Button ID="btn_register" class="BtnNext" runat="server" Text="volgende" 
+            onclick="btn_register_Click" />
     </div>
 
 

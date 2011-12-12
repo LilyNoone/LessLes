@@ -1,8 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/student.master" %>
-
-<script runat="server">
-
-</script>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/student.master" AutoEventWireup="true" CodeFile="s_procedure_goedkeuring.aspx.cs" Inherits="web_student_s_procedure_goedkeuring" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="page_title" Runat="Server">
 Student - Procedure goedkeuring
@@ -74,10 +70,13 @@ Procedure goedkeuring
     </ul>
 
     <div class="buttons">
-        <asp:Button ID="btnBack_goedkeuring" class="BtnBack" runat="server" Text="vorige" />
+        <asp:Button ID="btnBack_goedkeuring" class="BtnBack" runat="server" 
+            Text="vorige" onclick="btnBack_goedkeuring_Click" />
         <br />
         <asp:Button ID="btnNext_goedkeuring" class="BtnNext" runat="server" Text="volgende" />
     </div>
 
 </asp:Content>
+
+
 

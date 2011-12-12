@@ -1,9 +1,5 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/student.master" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/layout/student.master" AutoEventWireup="true" CodeFile="s_selectie_opleidingsonderdeel.aspx.cs" Inherits="web_student_s_selectie_opleidingsonderdeel" %>
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
-<script runat="server">
-
-</script>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="page_title" Runat="Server">
 Student - Selectie opleidingsonderdeel
 </asp:Content>
@@ -42,7 +38,8 @@ Selectie opleidingsonderdeel
                         <asp:ListItem Value="3">Website automatisatie</asp:ListItem>
                     </asp:CheckBoxList>
                     <asp:Button ID="btnCancel" runat="server" Text="Annuleer" AutoPostBack="True"/>
-                    <asp:Button ID="btnOk" runat="server" Text="Ok" AutoPostBack="True"/>
+                    <asp:Button ID="btnOk" runat="server" Text="Ok" AutoPostBack="True" 
+                        onclick="btnOk_Click1"/>
                 </asp:Panel>
 
                 <h3>Vul je vrijstellingen aan</h3>
@@ -59,4 +56,6 @@ Selectie opleidingsonderdeel
     
 
 </asp:Content>
+
+
 
