@@ -9,7 +9,7 @@
         </asp:ContentPlaceHolder> 
     </title>
     
-    <link href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/reset.css" rel="stylesheet" type="text/css" />
     <link href="../css/screen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -47,6 +47,7 @@
                  <ul>
                      <li>STAP 2:</li>
                      <li>studieverloop</li>
+                     <li>selectie vakken</li>
                      <li>selectie opleidingsonderdelen</li>
                      <li>bijlage</li>
                  </ul>

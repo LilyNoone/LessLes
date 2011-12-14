@@ -10,9 +10,9 @@ public class DALopleiding
 {
     dc_databankDataContext dc = new dc_databankDataContext();
 
-    public IList<tblOpleiding> selectAll()
+    public IList<Opleiding> selectAll()
     {
-        var result = (from o in dc.tblOpleidings
+        var result = (from o in dc.Opleidings
                       select o).ToList();
         return result;
     }

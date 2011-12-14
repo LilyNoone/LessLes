@@ -18,6 +18,9 @@ Selectie opleidingsonderdeel
         </asp:UpdateProgress>
 
         <asp:UpdatePanel id="UpdatePanel" runat="server">
+            <Triggers>
+                <asp:AsyncPostBackTrigger ControlID="checkVakken" EventName="SelectedIndexChanged"/>
+            </Triggers>
             <ContentTemplate>
                 <asp:ModalPopupExtender ID="ModalPopUpExtender" runat="server"
                     TargetControlID="btnSelectVakken"
@@ -32,10 +35,7 @@ Selectie opleidingsonderdeel
                 <asp:Panel ID="panSelectVakken" runat="server" CssClass="backgroundPanelPop">
                     <h3>Selecteer je opleidingsonderdeel</h3>
                     <em>Vink <strong>alle</strong> vakken aan waarvoor je een vrijstelling wilt aanvragen.</em>
-                    <asp:CheckBoxList ID="checkVakken" runat="server" AutoPostBack="True">
-                        <asp:ListItem Value="1">Visualiseren</asp:ListItem>
-                        <asp:ListItem Value="2">Photoshop</asp:ListItem>
-                        <asp:ListItem Value="3">Website automatisatie</asp:ListItem>
+                    <asp:CheckBoxList ID="checkVakken" runat="server" AutoPostBack="true">
                     </asp:CheckBoxList>
                     <asp:Button ID="btnCancel" runat="server" Text="Annuleer" AutoPostBack="True"/>
                     <asp:Button ID="btnOk" runat="server" Text="Ok" AutoPostBack="True" 

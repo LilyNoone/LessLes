@@ -12,7 +12,7 @@ public class BLLstudent
 {
     DALstudent DALstudent = new DALstudent();
 
-    public void insertStudent(tblStudent s)
+    public void insertStudent(Student s)
     {
         DALstudent.insertStudent(s);
     }

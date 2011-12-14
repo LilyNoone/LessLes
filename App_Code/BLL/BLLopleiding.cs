@@ -10,7 +10,7 @@ public class BLLopleiding
 {
     DALopleiding DALopleiding = new DALopleiding();
 
-    public IList<tblOpleiding> selectAll()
+    public IList<Opleiding> selectAll()
     {
         return DALopleiding.selectAll();
     }
